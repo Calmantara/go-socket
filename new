@@ -1,0 +1,14 @@
+Expect: (!x.!y.(x y) (y w)) -> !z.((y w) z)
+Randomized problem: (!u.!b.(u b) (b a)) -> !z.((b a) z)
+-> {"id":6,"method":"evaluate","params":{"expression":"(!u.!b.(u b) (b a))"}}
+<- {"id":6,"result":{"expression":"!v.((b a) v)"}}
+Normalize result: !v.((b a) v) -> !z.((b a) z)
+!z.((b a) z) == !z.((b a) z)
+
+
+Expect: ((!y.!x.(y x) !x.!y.(y x)) (y w)) -> !a.(a (y w))
+Randomized problem: ((!y.!u.(y u) !u.!y.(y u)) (y j)) -> !z.(z (y j))
+-> {"id":7,"method":"evaluate","params":{"expression":"((!y.!u.(y u) !u.!y.(y u)) (y j))"}}
+<- {"id":7,"result":{"expression":"((!y.!u.(y u) !u.!y.(y u)) (y j))"}}
+Normalize result: ((!y.!u.(y u) !u.!y.(y u)) (y j)) -> ((!z.!x.(z x) !w.!v.(v w)) (y j))
+
